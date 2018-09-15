@@ -2,9 +2,9 @@
 ## Dockercontainer for Fchain Wallet
 
 Run Container:
->```docker run --name fchain-masternode-01 --restart=always -d --net mn_net -p xxx.xxx.xxx.xxx:19551:19551 -p xxx.xxx.xxx.xx:19552:19552  -v /masternode/fchain_01/.cryptocashback:/root/.cryptocashback aviator86/fchain-wallet```
+>```docker run --name fchain-masternode-01 --restart=always -d --net mn_net -p xxx.xxx.xxx.xxx:6565:6565 -p xxx.xxx.xxx.xx:6566:6566  -v /masternode/fchain_01/.fchain:/root/.fchain aviator86/fchain-docker```
 
-> /masternode/fchain_01/.cryptocashback - is the location where you store your config on the host  
+> /masternode/fchain_01/.fchain - is the location where you store your config on the host  
 --name  fchain-masternode-01 - is the tag which will show up in the Container list name it whatever you want
 
 Stoping Container:
@@ -24,7 +24,7 @@ See Container Logs:
 
 ## Wallet Status inside Container
 See fchain Chain Status:
->```docker exec -it fchain-masternode-01 cryptocashback-cli getinfo```
+>```docker exec -it fchain-masternode-01 fchain-cli getinfo```
 
 See fchain Chain Masternode Status:
->```docker exec -it fchain-masternode-01 cryptocashback-cli masternode status```
+>```docker exec -it fchain-masternode-01 fchain-cli masternode status```
